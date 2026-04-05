@@ -17,7 +17,7 @@ OPENROUTER_API_KEY=...
 ```
 * запустить TG-бота.
 ```
-python3 -m tg.bot
+py.exe -m tg.bot
 ```
 
 ## Примеры диалогов

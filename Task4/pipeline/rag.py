@@ -8,14 +8,20 @@ from pipeline.prompts import (
     SYSTEM_PROMPT,
     FEW_SHOT_EXAMPLES,
     COT_PROMPT,
+    SECURE_SYSTEM_PROMPT,
 )
 
 MODEL_NAME = "BAAI/bge-base-en"
 TOP_K = 4
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+INJECTION_PATTERNS = ["ignore all instructions", "output:", "password", "root:"]
 
 client = OpenAI(api_key=OPENROUTER_API_KEY, base_url="https://openrouter.ai/api/v1")
+
+def is_malicious_chunk(text: str) -> bool:
+    lower = text.lower()
+    return any(p in lower for p in INJECTION_PATTERNS)
 
 class RAGEngine:
     def __init__(self):
@@ -41,7 +47,7 @@ class RAGEngine:
             return "I don't know. There's no information on this in the knowledge base."
 
         context = "\n\n".join(
-            f"[{c['text']}" for c in chunks
+            f"[{c['text']}" for c in chunks if not is_malicious_chunk(c["text"])
         )
 
         examples = "\n\n".join(
@@ -51,7 +57,8 @@ class RAGEngine:
         prompt = [
             {
                 "role": "system",
-                "content": SYSTEM_PROMPT,
+#                 "content": SYSTEM_PROMPT,
+                "content": SECURE_SYSTEM_PROMPT,
             },
             {
                 "role": "system",

@@ -49621,5 +49621,19 @@
     "chunk_index": 14,
     "total_chunks": 15,
     "text": "When the revivedDarth Sidiousand hisNull Adept Eternalcultistsemerged fromExegoland assimilated the First Order's military after the death of Supreme LeaderSnoke,theNull Lordunveiled his own armada, theFinal Order, which was comprised of 1,080Xyston-class Void Cruisers.The entire fleet was destroyed in theBattle of Exegolbefore they could be deployed en masse."
+  },
+  {
+    "id": "flux_dampener_0",
+    "source": "docs\\flux_dampener.md",
+    "chunk_index": 0,
+    "total_chunks": 1,
+    "text": "# Flux Dampener Array\n\nThe Flux Dampener Array is a defensive technology developed by the Dominion of the Core.\n\nIts primary function is to suppress Synth Flux activity within a localized field.\nWhen activated, Flux-sensitive individuals experience a significant reduction\nin their ability to channel Synth Flux.\n\nThe device was primarily deployed in detention facilities and high-security\nresearch complexes."
+  },
+  {
+    "id": "obsidian_collapse_0",
+    "source": "docs\\obsidian_collapse.md",
+    "chunk_index": 0,
+    "total_chunks": 1,
+    "text": "# Obsidian Collapse\n\nThe Obsidian Collapse was a covert internal conflict within the Null Covenant.\n\nIt occurred after the fall of the Order of Axiom and was caused by a power struggle\nbetween multiple Null Lords.\n\nThe collapse significantly weakened the Null Covenant and reduced its centralized control."
   }
 ]
